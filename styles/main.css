@@ -1,0 +1,206 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
+@import "colors.css";
+/* General-use */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 18px;
+}
+
+.checkbox {
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+}
+
+.checkbox:checked {
+  background: var(--CheckBackground);
+}
+
+.checkbox:checked::before {
+  content: "";
+  display: block;
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  background: center url(/images/icon-check.svg) no-repeat;
+  background-size: 10px 10px;
+}
+
+.todo-container .todo-tasks::-webkit-scrollbar {
+  display: none;
+}
+
+.delete-button {
+  position: absolute;
+  right: 10px;
+  background-color: transparent;
+  background-image: url(/images/icon-cross.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  cursor: pointer;
+  height: 50px;
+  width: 50px;
+  opacity: 0;
+}
+
+.task:hover .delete-button {
+  opacity: 1;
+}
+
+span {
+  padding: 0 0 0 15px;
+}
+
+span:hover {
+  cursor: pointer;
+}
+
+input::placeholder {
+  color: var(--InputStatusText);
+}
+
+p {
+  font-size: 14px;
+}
+
+/* Single-use */
+
+body {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  flex-direction: column;
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  min-width: 540px;
+  height: 300px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: -1;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+header .title {
+  padding: 10px 0 0 0;
+  font-size: 40px;
+  font-weight: 700;
+  letter-spacing: 12px;
+  color: var(--HeaderTitle);
+}
+
+main {
+  width: 540px;
+  margin: 80px 0 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.todo-input #add-task-input {
+  background: transparent;
+  outline: none;
+  border: none;
+  padding: 0 0 0 15px;
+  width: 100%;
+}
+
+.todo-container {
+  width: 100%;
+  display: flex;
+  height: 360px;
+  box-shadow: 0 20px 100px rgb(0 0 0 / 20%);
+  margin: 40px 0 0 0;
+  align-items: center;
+}
+
+.todo-container .todo-tasks {
+  list-style-type: none;
+  height: inherit;
+  width: inherit;
+  overflow-y: scroll;
+  border-radius: 8px 8px 0 0;
+}
+
+.todo-container .todo-tasks .task {
+  position: relative;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px 0 20px;
+}
+
+.status-container {
+  width: 100%;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  padding: 20px;
+  border-radius: 0 0 8px 8px;
+}
+
+.status-button,
+.items-count {
+  font-size: 14px;
+  font-weight: 400px;
+}
+
+.status-button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.status-clear {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.items-left,
+.clear-task {
+  width: 25%;
+  white-space: nowrap;
+}
+
+.status-task {
+  display: flex;
+  width: 50%;
+  gap: 40px;
+}
+
+.clear-task {
+  text-align: center;
+}
+
+.status-container-responsive {
+  display: none;
+}

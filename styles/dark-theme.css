@@ -1,0 +1,97 @@
+@import "colors.css";
+
+.dark-theme {
+  background-color: var(--BackgroundBottomDark);
+}
+.dark-theme header::before {
+  background-image: url("../images/bg-desktop-dark.jpg");
+}
+
+.dark-theme .darkButton {
+  background: url(../images/icon-sun.svg);
+  height: 50px;
+  width: 50px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+}
+
+.dark-theme .todo-input {
+  border-radius: 8px;
+  width: 100%;
+  margin: 30px 0 0 0;
+  display: flex;
+  background: var(--BackgroundFieldsDark);
+  height: 60px;
+  padding: 20px;
+  align-items: center;
+}
+
+.dark-theme .todo-input #add-task-input {
+  color: var(--NotCompletedDark);
+}
+
+.dark-theme .todo-container .todo-tasks .task {
+  background-color: var(--BackgroundFieldsDark);
+  border-bottom: 1px solid var(--CompletedDark);
+  color: var(--NotCompletedDark);
+}
+
+.dark-theme .checkbox {
+  border: 1px solid var(--CheckBoxBorderDark);
+}
+
+.dark-theme .checkbox:hover {
+  background: linear-gradient(
+        var(--BackgroundFieldsDark),
+        var(--BackgroundFieldsDark)
+      )
+      padding-box,
+    linear-gradient(to right, hsl(192, 100%, 67%), hsl(280, 87%, 65%))
+      border-box;
+  border: 2px solid transparent;
+}
+
+.dark-theme .checkbox:checked:hover {
+  background-image: var(--CheckBackground);
+  border: none;
+}
+
+.dark-theme .checked {
+  text-decoration: line-through;
+  text-decoration-color: var(--CompletedDark);
+  color: var(--CompletedDark);
+}
+
+.dark-theme .checked span {
+  color: var(--CompletedDark);
+}
+
+.dark-theme .status-container {
+  background: var(--BackgroundFieldsDark);
+}
+
+.dark-theme .items-left {
+  color: var(--InputStatusText);
+}
+
+.dark-theme .status-button {
+  color: var(--InputStatusText);
+}
+
+.dark-theme .status-button:hover {
+  color: var(--HeaderTitle);
+}
+
+.dark-theme .status-clear {
+  color: var(--InputStatusText);
+}
+
+.dark-theme .status-clear:hover {
+  color: var(--HeaderTitle);
+}
+
+.dark-theme .clicked {
+  color: var(--StatusSelected);
+}
